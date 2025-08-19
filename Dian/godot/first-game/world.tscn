@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://r7003sihl5gq"]
+
+[ext_resource type="Script" uid="uid://b58hc6lgsi7vb" path="res://stats.gd" id="1_fj7yv"]
+[ext_resource type="Script" uid="uid://y23qm5b8c7cf" path="res://world.gd" id="1_tlwt5"]
+[ext_resource type="Script" uid="uid://kxub70njom2a" path="res://quest.gd" id="2_tlwt5"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_tlwt5")
+
+[node name="stats" type="Node" parent="."]
+script = ExtResource("1_fj7yv")
+Name = "discipline"
+
+[node name="stats2" type="Node" parent="."]
+script = ExtResource("1_fj7yv")
+Name = "focus"
+
+[node name="stats3" type="Node" parent="."]
+script = ExtResource("1_fj7yv")
+Name = "creativity"
+
+[node name="quest" type="Node" parent="."]
+script = ExtResource("2_tlwt5")
+Type = " "

@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://ds6f5hrsew33d"]
+
+[ext_resource type="Script" uid="uid://m3kjt7wgtwy0" path="res://scrips/proc_gen_map.gd" id="1_6ep8e"]
+[ext_resource type="TileSet" uid="uid://c8ejlfbo2nraq" path="res://data_folder/map.tres" id="2_d0vck"]
+[ext_resource type="PackedScene" uid="uid://cblsbjv5mnqut" path="res://scenes/character.tscn" id="3_d0vck"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_d0vck"]
+seed = 1
+frequency = 0.0459
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_bdyem"]
+noise = SubResource("FastNoiseLite_d0vck")
+
+[node name="proc_gen_map" type="Node2D"]
+script = ExtResource("1_6ep8e")
+noise_height_texture = SubResource("NoiseTexture2D_bdyem")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("2_d0vck")
+format = 2
+layer_0/name = "water"
+layer_0/z_index = -1
+layer_1/name = "ground"
+layer_1/z_index = -1
+layer_2/name = "cliff"
+layer_2/z_index = -1
+layer_3/name = "enviroment"
+
+[node name="Character" parent="." instance=ExtResource("3_d0vck")]

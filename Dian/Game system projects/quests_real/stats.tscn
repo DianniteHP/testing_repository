@@ -1,0 +1,81 @@
+[gd_scene load_steps=3 format=3 uid="uid://cunv5yipwlqxk"]
+
+[ext_resource type="Script" uid="uid://dv057quocyw5g" path="res://stats.gd" id="1_qkx3n"]
+[ext_resource type="Texture2D" uid="uid://dle7xjwtyp3tq" path="res://rm218-bb-07.jpg" id="2_74t8q"]
+
+[node name="stats" type="Control" node_paths=PackedStringArray("level_label", "exp_needed_label")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qkx3n")
+level_label = NodePath("Control/HBoxContainer/level")
+exp_needed_label = NodePath("Control/HBoxContainer/exp_needed")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(583.5, 328)
+scale = Vector2(0.242551, 0.208396)
+texture = ExtResource("2_74t8q")
+metadata/_edit_lock_ = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 365.0
+offset_top = 246.0
+offset_right = -357.0
+offset_bottom = -292.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -31.0
+offset_right = -220.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+
+[node name="stat" type="Label" parent="Control/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "focus"
+
+[node name="level" type="Label" parent="Control/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "/  level: "
+
+[node name="exp_needed" type="Label" parent="Control/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "/ exp needed: "
+
+[node name="Menu" type="Button" parent="."]
+offset_left = 26.0
+offset_top = 19.0
+offset_right = 95.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 25
+text = "quests
+"
+
+[node name="exp" type="Label" parent="."]
+layout_mode = 0
+offset_left = 458.0
+offset_top = 128.0
+offset_right = 538.0
+offset_bottom = 177.0
+theme_override_font_sizes/font_size = 35
+text = "exp: "
+
+[connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]

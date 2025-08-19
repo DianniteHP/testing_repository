@@ -6,3 +6,4 @@ func _ready() -> void:
 	if idk.values().has("i"):
 		print("yes")
 		print("test test test")
+		print("can i return to my old verison???")
