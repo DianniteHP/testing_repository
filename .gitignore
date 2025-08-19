@@ -1,7 +1,7 @@
-.godot\
-.import\
-.export\
-.mono\
+.godot/
+.import/
+.export/
+.mono/
 export_presets.cfg
 *.log
 *.tmp
